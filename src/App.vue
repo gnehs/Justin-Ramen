@@ -54,6 +54,8 @@ const records = ref(rawdata)
   margin-top: 128px
   margin-bottom: 8px
   text-align: center
+  @media (max-width: 768px)
+    margin-top: 64px
   &+h1
     text-align: center
     margin-top: 0
