@@ -14,4 +14,5 @@ import fs from 'fs';
   }
   // write file
   fs.writeFileSync('./src/assets/data.json', JSON.stringify(data));
+  fs.writeFileSync('./public/data.json', JSON.stringify(data));
 })();

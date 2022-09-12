@@ -10,20 +10,64 @@ const records = ref(rawdata)
   <div class="container">
     <div class="logo">🍜</div>
     <h1>Justin 請我吃 100 元拉麵</h1>
-    <pre>{{records}}</pre>
+    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品，為了達成目標他會請大家吃便宜拉麵</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="title">本日點數</div>
+        <div class="value">{{ records.data.at(-1).value }}</div>
+      </div>
+      <div class="stat">
+        <div class="title">累計點數</div>
+        <div class="value">{{ records.total }}</div>
+      </div>
+      <div class="stat">
+        <div class="title">剩餘點數</div>
+        <div class="value">{{ 300 - records.total }}</div>
+      </div>
+    </div>
+    <footer>
+      Developed by <a href="https://gnehs.net">可愛勝勝寶寶</a> | <a
+        href="https://ramen.justinlin.tw/data.json" target="_blank">原始資料</a>
+    </footer>
   </div>
 </template>
 
-<style scoped lang="sass">
+<style lang="sass">
 .container
   width: min(100vw,960px)
   margin: 0 auto
-
+  font-family: 'Roboto Condensed', 'Noto Sans TC', sans-serif
 .logo
   font-size: 128px
-  margin: 16px 0
   margin-top: 128px
+  margin-bottom: 8px
   text-align: center
   &+h1
     text-align: center
+    margin-top: 0
+    &+p
+      text-align: center
+      margin-top: 0
+      margin-bottom: 64px
+.stats
+  display: grid
+  grid-template-columns: repeat(3,1fr)
+  gap: 16px
+  .stat
+    border: 1px solid #ddd
+    border-radius: 16px
+    padding: 16px
+    .title
+      color: #000
+      font-size: 16px
+      opacity: .75
+    .value
+      font-size: 32px
+footer
+  font-size: 14px
+  opacity: .75
+  text-align: center
+  margin-top: 16px
+  a
+    color: #333
 </style>
