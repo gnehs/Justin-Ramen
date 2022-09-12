@@ -34,7 +34,7 @@ const records = ref(rawdata)
 
 <style lang="sass">
 .container
-  width: min(100vw,960px)
+  width: min(calc(100vw - 20px),960px)
   margin: 0 auto
   font-family: 'Roboto Condensed', 'Noto Sans TC', sans-serif
 .logo
