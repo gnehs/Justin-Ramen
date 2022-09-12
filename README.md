@@ -1,6 +1,6 @@
-# Vue 3 + Vite
+# Justin 請我吃 100 元拉麵
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品，為了達成目標他會請大家吃便宜拉麵
 
 ## Recommended IDE Setup
 
