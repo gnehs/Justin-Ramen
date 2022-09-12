@@ -63,6 +63,7 @@ const records = ref(rawdata)
       text-align: center
       margin-top: 0
       margin-bottom: 32px
+      line-height: 1.5
 .stats
   display: grid
   grid-template-columns: repeat(4,1fr)
