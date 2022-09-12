@@ -10,9 +10,11 @@
     "download-sheet": "node downloadSheet.js"
   },
   "dependencies": {
+    "apexcharts": "^3.35.5",
     "axios": "^0.27.2",
     "sass": "^1.54.9",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",

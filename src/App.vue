@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref } from 'vue'
 import rawdata from './assets/data.json'
+import chart from './components/chart.vue'
 const records = ref(rawdata)
 </script>
 
@@ -23,6 +24,12 @@ const records = ref(rawdata)
       <div class="stat">
         <div class="title">剩餘點數</div>
         <div class="value">{{ 300 - records.total }}</div>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="title">點數紀錄</div>
+      <div class="value">
+        <chart />
       </div>
     </div>
     <footer>
@@ -49,26 +56,27 @@ const records = ref(rawdata)
     &+p
       text-align: center
       margin-top: 0
-      margin-bottom: 64px
+      margin-bottom: 32px
 .stats
   display: grid
   grid-template-columns: repeat(3,1fr)
   gap: 16px
-  .stat
-    border: 1px solid #ddd
-    border-radius: 16px
-    padding: 16px
-    .title
-      color: #000
-      font-size: 16px
-      opacity: .75
-    .value
-      font-size: 32px
+  margin-bottom: 16px
+.stat
+  border: 1px solid #ddd
+  border-radius: 16px
+  padding: 16px
+  .title
+    color: #000
+    font-size: 16px
+    opacity: .75
+  .value
+    font-size: 32px
 footer
   font-size: 14px
   opacity: .75
   text-align: center
-  margin-top: 16px
+  margin: 16px 0
   a
     color: #333
 </style>
