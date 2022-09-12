@@ -25,6 +25,10 @@ const records = ref(rawdata)
         <div class="title">剩餘點數</div>
         <div class="value">{{ 300 - records.total }}</div>
       </div>
+      <div class="stat">
+        <div class="title">達成率</div>
+        <div class="value">{{ Math.round(records.total/300*100)/100 }}%</div>
+      </div>
     </div>
     <div class="stat" v-if="records.data.length>1">
       <div class="title">點數紀錄</div>
@@ -59,9 +63,11 @@ const records = ref(rawdata)
       margin-bottom: 32px
 .stats
   display: grid
-  grid-template-columns: repeat(3,1fr)
+  grid-template-columns: repeat(4,1fr)
   gap: 16px
   margin-bottom: 16px
+  @media (max-width: 768px)
+    grid-template-columns: repeat(2,1fr)
 .stat
   border: 1px solid #ddd
   border-radius: 16px
