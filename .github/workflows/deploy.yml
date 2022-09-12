@@ -5,8 +5,8 @@ on:
     branches: main
   workflow_dispatch:
   schedule:
-    # run every 2 hours
-    - cron: '0 */2 * * *'
+    # run every 15 minutes
+    - cron: '*/10 * * * *'
 jobs:
   deploy:
     runs-on: ubuntu-latest
