@@ -26,7 +26,8 @@ const records = ref(rawdata)
       </div>
     </div>
     <footer>
-      Developed by <a href="https://gnehs.net">可愛勝勝寶寶</a> | <a
+      Developed by <a href="https://gnehs.net" target="_blank">可愛勝勝寶寶</a> | <a
+        href="https://github.com/gnehs/Justin-Ramen" target="_blank">GitHub</a> | <a
         href="https://ramen.justinlin.tw/data.json" target="_blank">原始資料</a>
     </footer>
   </div>
