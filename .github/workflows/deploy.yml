@@ -4,7 +4,9 @@ on:
   push:
     branches: main
   workflow_dispatch:
-
+  schedule:
+    # run every 2 hours
+    - cron: '0 */2 * * *'
 jobs:
   deploy:
     runs-on: ubuntu-latest
