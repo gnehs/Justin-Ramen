@@ -26,7 +26,7 @@ const records = ref(rawdata)
         <div class="value">{{ 300 - records.total }}</div>
       </div>
     </div>
-    <div class="stat">
+    <div class="stat" v-if="records.data.length>1">
       <div class="title">點數紀錄</div>
       <div class="value">
         <chart />
