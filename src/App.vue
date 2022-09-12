@@ -1,31 +1,29 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import rawdata from './assets/data.json'
+const records = ref(rawdata)
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container">
+    <div class="logo">🍜</div>
+    <h1>Justin 請我吃 100 元拉麵</h1>
+    <pre>{{records}}</pre>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style scoped lang="sass">
+.container
+  width: min(100vw,960px)
+  margin: 0 auto
+
+.logo
+  font-size: 128px
+  margin: 16px 0
+  margin-top: 128px
+  text-align: center
+  &+h1
+    text-align: center
 </style>
