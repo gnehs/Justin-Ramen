@@ -31,7 +31,7 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
       </div>
       <div class="stat">
         <div class="title">達成率</div>
-        <div class="value">{{ Math.round(records.total/300*100)/100 }}%</div>
+        <div class="value">{{ Math.round((records.total / 300) * 10000) / 100 }}%</div>
       </div>
     </div>
     <div class="stat" v-if="records.data.length>1">
