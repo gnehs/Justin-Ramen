@@ -92,4 +92,14 @@ footer
   margin: 16px 0
   a
     color: #333
+    padding: 4px 4px
+    border-radius: 4px
+    display: inline-block
+    transition: all .2s ease
+    &:hover
+      background: rgba(0,0,0,.1)
+      text-decoration: none
+    &:active
+      transform: scale(.95)
+
 </style>
