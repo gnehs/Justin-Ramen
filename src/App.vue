@@ -14,7 +14,7 @@ const records = ref(rawdata)
     <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品，為了達成目標他會請大家吃便宜拉麵</p>
     <div class="stats">
       <div class="stat">
-        <div class="title">本日點數</div>
+        <div class="title">{{records.data.at(-1).date.split('-').slice(1,3).join('/')}} 點數</div>
         <div class="value">{{ records.data.at(-1).value }}</div>
       </div>
       <div class="stat">
