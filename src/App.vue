@@ -14,20 +14,16 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 
 <template>
   <div class="container">
-    <div class="logo">🍜</div>
-    <h1>Justin 請我吃 100 元拉麵</h1>
-    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />
-      為了達成目標他會請大家吃便宜拉麵 <br />
-      <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a>
-    </p>
+    <header>
 
-    <div class="progress-container">
-      <div class="start">
-        <img src="/avatar.jpg" />
-      </div>
-      <div class="progress-bar" :style="{'--progress' : `${progress}%`}"></div>
-      <div class="end">🎁</div>
-    </div>
+      <div class="logo">🍜</div>
+      <h1>Justin 請我吃 100 元拉麵</h1>
+      <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />
+        為了達成目標他會請大家吃便宜拉麵 <br />
+        <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a>
+      </p>
+    </header>
+
     <div class="stats">
       <div class="stat">
         <div class="title">{{ todayTitle }}</div>
@@ -44,6 +40,15 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
       <div class="stat">
         <div class="title">達成率</div>
         <div class="value">{{ progress }}%</div>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="progress-container">
+        <div class="start">
+          <img src="/avatar.jpg" />
+        </div>
+        <div class="progress-bar" :style="{'--progress' : `${progress}%`}"></div>
+        <div class="end">🎁</div>
       </div>
     </div>
     <div class="stat" style="padding-bottom: 0;">
@@ -63,29 +68,35 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 <style lang="sass">
 \:root
   --text-color: #333
-  --background-color: #fff
+  --background-color: #f2f2f2
+  --secondary-color: #fff
   --progress-color: #ddd
 // dark mode
 @media (prefers-color-scheme: dark)
   \:root
     --text-color: #fff
     --background-color: #333
+    --secondary-color: #222
     --progress-color: #555
 body
   background-color: var(--background-color)
   color: var(--text-color)
+header
+  background-color: var(--secondary-color)
+  padding: 16px
+  border-radius: 16px
+  margin-top: 16px
 .container
   width: min(calc(100vw - 20px),960px)
   margin: 0 auto
   font-family: 'Roboto Condensed', 'Noto Sans TC', sans-serif
 .logo
   font-size: 128px
-  margin-top: 128px
   margin-bottom: 8px
   text-align: center
   position: relative
   &:before
-    content: '拉麵'
+    content: '拉 麵'
     font-family: 'Noto Serif TC', serif
     font-weight: 700
     font-size: 96px
@@ -98,12 +109,11 @@ body
     margin: auto
     z-index: -1
     opacity: .25
-  @media (max-width: 768px)
-    margin-top: 64px
   &+h1
     text-align: center
     margin-top: 0
     font-family: 'Noto Serif TC', serif
+    letter-spacing: 0.02em
     &+p
       text-align: center
       margin-top: 0
@@ -111,7 +121,6 @@ body
 .join-btn
   margin-top: 16px
   display: inline-block
-  background-color: var(--background-color)
   border: 2px solid rgba(51, 178, 223, 0.85)
   padding: 8px 16px
   border-radius: 100em
@@ -127,10 +136,13 @@ body
   margin: 16px 0
   @media (max-width: 768px)
     grid-template-columns: repeat(2,1fr)
+  .stat
+    margin: 0
 .stat
-  border: 1px solid var(--progress-color)
   border-radius: 8px
   padding: 16px
+  background-color: var(--secondary-color)
+  margin: 16px 0
   .title
     color: var(--text-color)
     font-size: 16px
@@ -142,8 +154,7 @@ body
   display: flex
   align-items: center
   gap: 8px
-  width: min(512px,100%)
-  margin: 32px auto
+  width: 100%
   .start
     img
       height: var(--size)
