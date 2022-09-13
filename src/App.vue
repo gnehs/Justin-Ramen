@@ -162,6 +162,7 @@ header
       width: var(--size)
       border-radius: 50%
       display: block
+      animation: poyon 0.5s infinite
   .end
     font-size: var(--size)
     line-height: 1
@@ -187,5 +188,13 @@ footer
       text-decoration: none
     &:active
       transform: scale(.95)
-
+@keyframes poyon
+  0%,100%
+    transform: scale(1, 1)
+  25%
+    transform: scale(0.9, 1.1)
+  50%
+    transform: scale(1.1, 0.9)
+  75%
+    transform: scale(0.95, 1.05)
 </style>
