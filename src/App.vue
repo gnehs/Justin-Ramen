@@ -1,6 +1,4 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { ref } from 'vue'
 import rawdata from './assets/data.json'
 import chart from './components/chart.vue'
@@ -67,6 +65,8 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 
 <style lang="sass">
 \:root
+  --border-radius: 8px
+  // color
   --text-color: #333
   --background-color: #f2f2f2
   --secondary-color: #fff
@@ -81,55 +81,55 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 body
   background-color: var(--background-color)
   color: var(--text-color)
-header
-  background-color: var(--secondary-color)
-  padding: 16px
-  border-radius: 8px
-  margin-top: 16px
 .container
   width: min(calc(100vw - 32px),960px)
   margin: 0 auto
   font-family: 'Roboto Condensed', 'Noto Sans TC', sans-serif
-.logo
-  font-size: 128px
-  margin-bottom: 8px
-  text-align: center
-  position: relative
-  transform-style: preserve-3d
-  &:before
-    content: '拉 麵'
-    font-family: 'Noto Serif TC', serif
-    font-weight: 700
-    font-size: 96px
-    line-height: 128px
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    margin: auto
-    opacity: .25
-    transform: translateZ(-1px)
-  &+h1
+header
+  background-color: var(--secondary-color)
+  padding: 16px
+  border-radius: var(--border-radius)
+  margin-top: 16px
+  .logo
+    font-size: 128px
+    margin-bottom: 8px
+    text-align: center
+    position: relative
+    transform-style: preserve-3d
+    &:before
+      content: '拉麵'
+      font-family: 'Noto Serif TC', serif
+      font-weight: 700
+      font-size: 96px
+      line-height: 128px
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      opacity: .25
+      transform: translateZ(-1px)
+  h1
     text-align: center
     margin-top: 0
     font-family: 'Noto Serif TC', serif
     letter-spacing: 0.02em
-    &+p
-      text-align: center
-      margin-top: 0
-      line-height: 1.5
-.join-btn
-  margin-top: 16px
-  display: inline-block
-  border: 2px solid rgba(51, 178, 223, 0.85)
-  padding: 8px 16px
-  border-radius: 100em
-  text-decoration: none
-  color: rgba(51, 178, 223, 1)
-  &:hover
-    background-color: rgba(51, 178, 223, 0.85)
-    color: var(--background-color)
+  p
+    text-align: center
+    margin-top: 0
+    line-height: 1.5
+  .join-btn
+    margin-top: 16px
+    display: inline-block
+    border: 2px solid rgba(51, 178, 223, 1)
+    padding: 8px 16px
+    border-radius: 100em
+    text-decoration: none
+    color: rgba(51, 178, 223, 1)
+    &:hover
+      background-color: rgba(51, 178, 223, 1)
+      color: var(--background-color)
 .stats
   display: grid
   grid-template-columns: repeat(4,1fr)
@@ -140,7 +140,7 @@ header
   .stat
     margin: 0
 .stat
-  border-radius: 8px
+  border-radius: var(--border-radius)
   padding: 16px
   background-color: var(--secondary-color)
   margin: 16px 0
