@@ -16,7 +16,11 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
   <div class="container">
     <div class="logo">🍜</div>
     <h1>Justin 請我吃 100 元拉麵</h1>
-    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />為了達成目標他會請大家吃便宜拉麵</p>
+    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />
+      為了達成目標他會請大家吃便宜拉麵 <br />
+      <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a>
+    </p>
+
     <div class="progress-container">
       <div class="start">
         <img src="/avatar.jpg" />
@@ -104,6 +108,18 @@ body
       text-align: center
       margin-top: 0
       line-height: 1.5
+.join-btn
+  margin-top: 16px
+  display: inline-block
+  background-color: var(--background-color)
+  border: 2px solid rgba(51, 178, 223, 0.85)
+  padding: 8px 16px
+  border-radius: 100em
+  text-decoration: none
+  color: rgba(51, 178, 223, 1)
+  &:hover
+    background-color: rgba(51, 178, 223, 0.85)
+    color: var(--background-color)
 .stats
   display: grid
   grid-template-columns: repeat(4,1fr)
