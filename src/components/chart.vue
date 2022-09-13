@@ -42,8 +42,8 @@ export default {
       },
       series: [
         {
-          name: "累計點數",
-          data: data.data.map(x => x.value).reduce((a, b) => a.concat(a[a.length - 1] + b), [0]).slice(1),
+          name: "當日點數",
+          data: data.data.map(x => x.value)
         },
       ],
     };
