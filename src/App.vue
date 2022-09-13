@@ -9,16 +9,24 @@ const todayTitle = ref('今日點數')
 if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
 }
+const progress = Math.round((rawdata.total / 300) * 10000) / 100
 </script>
 
 <template>
   <div class="container">
     <div class="logo">🍜</div>
     <h1>Justin 請我吃 100 元拉麵</h1>
-    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品，為了達成目標他會請大家吃便宜拉麵</p>
+    <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />為了達成目標他會請大家吃便宜拉麵</p>
+    <div class="progress-container">
+      <div class="start">
+        <img src="/avatar.jpg" />
+      </div>
+      <div class="progress-bar" :style="{'--progress' : `${progress}%`}"></div>
+      <div class="end">🎁</div>
+    </div>
     <div class="stats">
       <div class="stat">
-        <div class="title">{{todayTitle}}</div>
+        <div class="title">{{ todayTitle }}</div>
         <div class="value">{{ records.data.at(-1).value }}</div>
       </div>
       <div class="stat">
@@ -31,7 +39,7 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
       </div>
       <div class="stat">
         <div class="title">達成率</div>
-        <div class="value">{{ Math.round((records.total / 300) * 10000) / 100 }}%</div>
+        <div class="value">{{ progress }}%</div>
       </div>
     </div>
     <div class="stat" v-if="records.data.length>1">
@@ -82,18 +90,17 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
     &+p
       text-align: center
       margin-top: 0
-      margin-bottom: 32px
       line-height: 1.5
 .stats
   display: grid
   grid-template-columns: repeat(4,1fr)
   gap: 16px
-  margin-bottom: 16px
+  margin: 16px 0
   @media (max-width: 768px)
     grid-template-columns: repeat(2,1fr)
 .stat
   border: 1px solid #ddd
-  border-radius: 16px
+  border-radius: 8px
   padding: 16px
   .title
     color: #000
@@ -101,6 +108,28 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
     opacity: .75
   .value
     font-size: 32px
+.progress-container
+  --size: 24px
+  display: flex
+  align-items: center
+  gap: 8px
+  width: min(512px,100%)
+  margin: 32px auto
+  .start
+    img
+      height: var(--size)
+      width: var(--size)
+      border-radius: 50%
+      display: block
+  .end
+    font-size: var(--size)
+    line-height: 1
+  .progress-bar
+    height: var(--size)
+    background: linear-gradient(to right, #333 var(--progress), #ddd var(--progress))
+    border-radius: calc(var(--size) / 2)
+    position: relative
+    flex: 1
 footer
   font-size: 14px
   opacity: .75
