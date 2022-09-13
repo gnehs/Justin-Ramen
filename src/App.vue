@@ -95,6 +95,7 @@ header
   margin-bottom: 8px
   text-align: center
   position: relative
+  transform-style: preserve-3d
   &:before
     content: '拉 麵'
     font-family: 'Noto Serif TC', serif
@@ -107,8 +108,8 @@ header
     right: 0
     bottom: 0
     margin: auto
-    z-index: -1
     opacity: .25
+    transform: translateZ(-1px)
   &+h1
     text-align: center
     margin-top: 0
