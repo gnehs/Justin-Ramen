@@ -56,6 +56,8 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
       </div>
     </div>
     <footer>
+      上次更新：{{ new Date(records.lastUpdate).toLocaleString() }}
+      <br />
       Developed by <a href="https://gnehs.net" target="_blank">可愛勝勝寶寶</a> | <a
         href="https://github.com/gnehs/Justin-Ramen" target="_blank">GitHub</a> | <a
         href="https://ramen.justinlin.tw/data.json" target="_blank">原始資料</a>
@@ -81,6 +83,7 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 body
   background-color: var(--background-color)
   color: var(--text-color)
+  line-height: 1.5
 .container
   width: min(calc(100vw - 32px),960px)
   margin: 0 auto
@@ -118,7 +121,6 @@ header
   p
     text-align: center
     margin-top: 0
-    line-height: 1.5
   .join-btn
     margin-top: 16px
     display: inline-block

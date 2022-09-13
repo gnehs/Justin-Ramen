@@ -10,6 +10,7 @@ import fs from 'fs';
 
   data = {
     data,
+    lastUpdate: new Date().toISOString(),
     total: data.map((row) => row.value).reduce((a, b) => a + b, 0)
   }
   // write file
