@@ -58,11 +58,27 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   margin-top: 128px
   margin-bottom: 8px
   text-align: center
+  position: relative
+  &:before
+    content: '拉麵'
+    font-family: 'Noto Serif TC', serif
+    font-weight: 700
+    font-size: 96px
+    line-height: 128px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    z-index: -1
+    opacity: .25
   @media (max-width: 768px)
     margin-top: 64px
   &+h1
     text-align: center
     margin-top: 0
+    font-family: 'Noto Serif TC', serif
     &+p
       text-align: center
       margin-top: 0
