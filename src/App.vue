@@ -122,7 +122,7 @@ header
     line-height: 1
   p
     text-align: center
-    margin-top: 0
+    margin: 0
   .join-btn
     margin-top: 16px
     display: inline-block
