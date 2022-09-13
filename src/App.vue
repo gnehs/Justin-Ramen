@@ -57,6 +57,19 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
 </template>
 
 <style lang="sass">
+\:root
+  --text-color: #333
+  --background-color: #fff
+  --progress-color: #ddd
+// dark mode
+@media (prefers-color-scheme: dark)
+  \:root
+    --text-color: #fff
+    --background-color: #333
+    --progress-color: #555
+body
+  background-color: var(--background-color)
+  color: var(--text-color)
 .container
   width: min(calc(100vw - 20px),960px)
   margin: 0 auto
@@ -99,11 +112,11 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
   @media (max-width: 768px)
     grid-template-columns: repeat(2,1fr)
 .stat
-  border: 1px solid #ddd
+  border: 1px solid var(--progress-color)
   border-radius: 8px
   padding: 16px
   .title
-    color: #000
+    color: var(--text-color)
     font-size: 16px
     opacity: .75
   .value
@@ -126,7 +139,7 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
     line-height: 1
   .progress-bar
     height: var(--size)
-    background: linear-gradient(to right, #333 var(--progress), #ddd var(--progress))
+    background: linear-gradient(to right, var(--text-color) var(--progress), var(--progress-color) var(--progress))
     border-radius: calc(var(--size) / 2)
     position: relative
     flex: 1
@@ -136,13 +149,13 @@ footer
   text-align: center
   margin: 16px 0
   a
-    color: #333
+    color: var(--text-color)
     padding: 4px 4px
     border-radius: 4px
     display: inline-block
     transition: all .2s ease
     &:hover
-      background: rgba(0,0,0,.1)
+      background: var(--progress-color)
       text-decoration: none
     &:active
       transform: scale(.95)
