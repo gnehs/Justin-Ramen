@@ -84,7 +84,7 @@ body
 header
   background-color: var(--secondary-color)
   padding: 16px
-  border-radius: 16px
+  border-radius: 8px
   margin-top: 16px
 .container
   width: min(calc(100vw - 20px),960px)
