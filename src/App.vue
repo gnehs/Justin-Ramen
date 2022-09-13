@@ -46,7 +46,7 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
         <div class="value">{{ progress }}%</div>
       </div>
     </div>
-    <div class="stat" v-if="records.data.length > 1">
+    <div class="stat" style="padding-bottom: 0;">
       <div class="title">點數紀錄</div>
       <div class="value">
         <chart />
