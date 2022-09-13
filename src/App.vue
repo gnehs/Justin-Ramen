@@ -99,6 +99,7 @@ header
     text-align: center
     position: relative
     transform-style: preserve-3d
+    line-height: 1
     &:before
       content: '拉麵'
       font-family: 'Noto Serif TC', serif
