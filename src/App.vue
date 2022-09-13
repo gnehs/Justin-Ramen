@@ -119,6 +119,7 @@ header
     margin-top: 0
     font-family: 'Noto Serif TC', serif
     letter-spacing: 0.02em
+    line-height: 1
   p
     text-align: center
     margin-top: 0
@@ -147,12 +148,15 @@ header
   padding: 16px
   background-color: var(--secondary-color)
   margin: 16px 0
+  line-height: 1
   .title
     color: var(--text-color)
     font-size: 16px
     opacity: .75
+    margin-bottom: 8px
   .value
     font-size: 32px
+    font-weight: 300
 .progress-container
   --size: 24px
   display: flex
