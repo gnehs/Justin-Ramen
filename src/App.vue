@@ -153,7 +153,7 @@ header
       color: var(--background-color)
 .stats
   display: grid
-  grid-template-columns: repeat(4,1fr)
+  grid-template-columns: repeat(3,1fr)
   gap: 16px
   margin: 16px 0
   @media (max-width: 768px)
