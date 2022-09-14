@@ -1,13 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import rawdata from './assets/data.json'
+import records from './assets/data.json'
 import chart from './components/chart.vue'
-const records = ref(rawdata)
 const todayTitle = ref('今日點數')
-if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
+if (records.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
 }
-const progress = Math.round((rawdata.total / 300) * 10000) / 100
+const progress = Math.round((records.total / 300) * 10000) / 100
 const expectedProgress = ref(0)
 const expectedPoints = ref(0)
 function calcExpectedPoints() {
