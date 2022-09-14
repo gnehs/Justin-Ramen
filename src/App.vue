@@ -16,7 +16,7 @@ function calcExpectedPoints() {
   expectedProgress.value = Math.round((expectedPoints.value / 300) * 10000) / 100
 }
 calcExpectedPoints()
-setInterval(calcExpectedPoints, 1000)
+setInterval(calcExpectedPoints, 605)
 </script>
 
 <template>
