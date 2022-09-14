@@ -8,6 +8,16 @@ if (rawdata.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
 }
 const progress = Math.round((rawdata.total / 300) * 10000) / 100
+const expectedProgress = ref(0)
+const expectedPoints = ref(0)
+function calcExpectedPoints() {
+  const start = new Date('2022-09-12 00:00:00')
+  const now = new Date()
+  expectedPoints.value = Math.floor(((now - start) / 1000) * (300 / 21 / 86400) * 10000) / 10000
+  expectedProgress.value = Math.round((expectedPoints.value / 300) * 10000) / 100
+}
+calcExpectedPoints()
+setInterval(calcExpectedPoints, 1000)
 </script>
 
 <template>
@@ -36,8 +46,16 @@ const progress = Math.round((rawdata.total / 300) * 10000) / 100
         <div class="value">{{ 300 - records.total }}</div>
       </div>
       <div class="stat">
+        <div class="title">預期點數</div>
+        <div class="value">{{ expectedPoints }}</div>
+      </div>
+      <div class="stat">
         <div class="title">達成率</div>
         <div class="value">{{ progress }}%</div>
+      </div>
+      <div class="stat">
+        <div class="title">預期達成率</div>
+        <div class="value">{{ expectedProgress }}%</div>
       </div>
     </div>
     <div class="stat">
