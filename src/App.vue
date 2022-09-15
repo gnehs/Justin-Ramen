@@ -27,7 +27,7 @@ setInterval(calcExpectedPoints, 605)
       <h1>Justin 請我吃 100 元拉麵</h1>
       <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />
         為了達成目標他會請大家吃便宜拉麵 <br />
-        <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a>
+        <!-- <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a> -->
       </p>
     </header>
 
