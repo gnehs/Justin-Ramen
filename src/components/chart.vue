@@ -9,7 +9,7 @@ export default {
     return {
       chartOptions: {
         chart: {
-          type: 'area',
+          type: 'bar',
           id: "records-chart",
           background: '#0000',
           sparkline: {
@@ -27,13 +27,13 @@ export default {
         },
         theme: {
           mode: window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light',
-          palette: 'palette3'
+          palette: 'palette2'
         },
         dataLabels: {
           enabled: true,
-          offsetY: -17.5,
+          offsetY: 0,
           style: {
-            colors: ['var(--text-color)']
+            colors: ['#fff']
           },
         },
         xaxis: {
@@ -44,6 +44,10 @@ export default {
         {
           name: "當日點數",
           data: data.data.map(x => x.value)
+        },
+        {
+          name: "累計點數",
+          data: data.data.map(x => x.value).reduce((a, b) => [...a, a[a.length - 1] + b], [0]).slice(1),
         },
       ],
     };
