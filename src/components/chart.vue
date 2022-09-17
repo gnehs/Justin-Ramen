@@ -12,6 +12,8 @@ export default {
           type: 'bar',
           id: "records-chart",
           background: '#0000',
+          fontFamily: `'Roboto Condensed', 'Noto Sans TC', sans-serif`,
+          fontWeight: 400,
           animations: {
             enabled: false,
           },
@@ -36,8 +38,6 @@ export default {
           offsetY: 0,
           style: {
             colors: ['#fff'],
-            fontFamily: `'Roboto Condensed', 'Noto Sans TC', sans-serif`,
-            fontWeight: 400,
           },
         },
         xaxis: {
