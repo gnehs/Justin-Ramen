@@ -37,6 +37,7 @@ export default {
           enabled: true,
           offsetY: 0,
           style: {
+            fontWeight: 400,
             colors: ['#fff'],
           },
         },
