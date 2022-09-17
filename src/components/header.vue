@@ -41,10 +41,11 @@ header
       transform: translateZ(-1px)
   h1
     text-align: center
-    margin-top: 0
+    margin: 0
     font-family: 'Noto Serif TC', serif
     letter-spacing: 0.02em
-    line-height: 1
+    line-height: 1.25
+    margin-bottom: 16px
   p
     text-align: center
     margin: 0
