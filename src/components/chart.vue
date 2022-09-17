@@ -5,6 +5,14 @@ export default {
   components: {
     apexchart: VueApexCharts,
   },
+  computed: {
+    height() {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        return `${data.data.map(x => x.value).length * 2 * 24 + 100}px`
+      }
+      return 'auto'
+    }
+  },
   data: function () {
     return {
       chartOptions: {
@@ -63,6 +71,7 @@ export default {
   <apexchart
     width="100%"
     type="bar"
+    :height="height"
     :options="chartOptions"
     :series="series">
   </apexchart>
