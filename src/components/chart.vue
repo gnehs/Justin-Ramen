@@ -12,9 +12,6 @@ export default {
           type: 'bar',
           id: "records-chart",
           background: '#0000',
-          sparkline: {
-            enabled: true,
-          },
           animations: {
             enabled: false,
           },
@@ -25,6 +22,11 @@ export default {
             show: false,
           }
         },
+        plotOptions: {
+          bar: {
+            horizontal: window.matchMedia("(max-width: 768px)").matches
+          }
+        },
         theme: {
           mode: window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light',
           palette: 'palette2'
@@ -33,7 +35,9 @@ export default {
           enabled: true,
           offsetY: 0,
           style: {
-            colors: ['#fff']
+            colors: ['#fff'],
+            fontFamily: `'Roboto Condensed', 'Noto Sans TC', sans-serif`,
+            fontWeight: 400,
           },
         },
         xaxis: {
