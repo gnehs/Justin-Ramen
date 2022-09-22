@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import records from '../assets/data.json'
 import chart from '@/components/chart.vue'
-import ConfettiExplosion from '@/components/confettiExplosion.vue'
+import ConfettiExplosion from '@/components/ConfettiExplosion.vue'
 const todayTitle = ref('今日點數')
 if (records.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
