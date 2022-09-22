@@ -43,7 +43,7 @@ export default {
         },
         dataLabels: {
           enabled: true,
-          offsetY: 0,
+          textAnchor: 'middle',
           style: {
             fontWeight: 400,
             colors: ['#fff'],

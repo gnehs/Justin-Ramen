@@ -7,13 +7,18 @@ const todayTitle = ref('今日點數')
 if (records.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
 }
+const avgPoints = ref(0)
+avgPoints.value = (records.data.reduce((a, b) => a + b.value, 0) / records.data.length).toFixed(2)
+const expectedAvgPoints = ref(0)
+expectedAvgPoints.value = (300 / 21).toFixed(2)
+
 const progress = Math.round((records.total / 300) * 10000) / 100
 const expectedProgress = ref(0)
 const expectedPoints = ref(0)
 function calcExpectedPoints() {
   const start = new Date('2022-09-12 00:08:00')
   const now = new Date()
-  expectedPoints.value = Math.min(Math.floor(((now - start) / 1000) * (300 / 21 / 86400) * 10000) / 10000, 300)
+  expectedPoints.value = Math.min((((now - start) / 1000) * (300 / 21 / 86400)).toFixed(4), 300)
   expectedProgress.value = Math.round((expectedPoints.value / 300) * 10000) / 100
 }
 calcExpectedPoints()
@@ -29,12 +34,12 @@ setInterval(calcExpectedPoints, 605)
       <div class="value">{{ records.data.at(-1).value }}</div>
     </div>
     <div class="stat">
-      <div class="title">累計點數</div>
-      <div class="value">{{ records.total }}</div>
-    </div>
-    <div class="stat">
       <div class="title">剩餘點數</div>
       <div class="value">{{ 300 - records.total }}</div>
+    </div>
+    <div class="stat">
+      <div class="title">累計點數</div>
+      <div class="value">{{ records.total }}</div>
     </div>
     <div class="stat">
       <div class="title">預期點數</div>
@@ -47,6 +52,14 @@ setInterval(calcExpectedPoints, 605)
     <div class="stat">
       <div class="title">預期達成率</div>
       <div class="value">{{ expectedProgress }}%</div>
+    </div>
+    <div class="stat">
+      <div class="title">平均每日點數</div>
+      <div class="value">{{ avgPoints }}</div>
+    </div>
+    <div class="stat">
+      <div class="title">預期每日點數</div>
+      <div class="value">{{ expectedAvgPoints }}</div>
     </div>
   </div>
   <div class="stat">
@@ -69,7 +82,7 @@ setInterval(calcExpectedPoints, 605)
 <style lang="sass">
 .stats
   display: grid
-  grid-template-columns: repeat(3,1fr)
+  grid-template-columns: repeat(4,1fr)
   gap: 16px
   margin: 16px 0
   @media (max-width: 768px)
