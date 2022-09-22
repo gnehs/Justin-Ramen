@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import records from '../assets/data.json'
 import chart from '@/components/chart.vue'
+import ConfettiExplosion from '@/components/confettiExplosion.vue'
 const todayTitle = ref('今日點數')
 if (records.data.at(-1).date.split('-').slice(2, 3) != new Date().getDate()) {
   todayTitle.value = '昨日點數'
@@ -19,7 +20,9 @@ calcExpectedPoints()
 setInterval(calcExpectedPoints, 605)
 </script>
 <template>
-
+  <transition name="fade-out">
+    <ConfettiExplosion v-if="records.total>=300" :duration="4500" :force="0.75" />
+  </transition>
   <div class="stats">
     <div class="stat">
       <div class="title">{{ todayTitle }}</div>
@@ -118,4 +121,11 @@ setInterval(calcExpectedPoints, 605)
     transform: scale(1.1, 0.9)
   75%
     transform: scale(0.95, 1.05)
+
+
+// fade-out
+.fade-out-leave-to
+  opacity: 0
+.fade-out-leave-active
+  transition: opacity 0.5s ease
 </style>

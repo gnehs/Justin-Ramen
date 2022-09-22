@@ -40,6 +40,8 @@ body
   line-height: 1.5
 .container
   width: min(calc(100vw - 32px),960px)
+  max-width: min(calc(100vw - 32px),960px)
+  overflow-x: hidden
   margin: 0 auto
   font-family: 'Roboto Condensed', 'Noto Sans TC', sans-serif
 footer

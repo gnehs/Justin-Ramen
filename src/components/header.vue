@@ -1,7 +1,5 @@
 <template>
-
   <header>
-
     <div class="logo">🍜</div>
     <h1>Justin 請我吃 100 元拉麵</h1>
     <p>賈斯丁寶寶要在三週內在麵屋雞金集 300 點換只有他有的獎品<br />
@@ -9,7 +7,6 @@
       <!-- <a class="join-btn" href="https://t.me/+a77vjN4OlDkyZjVl" target="_blank">加入 Telegram 群組</a> -->
     </p>
   </header>
-
 </template>
 
 <style lang="sass">
