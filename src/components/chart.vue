@@ -52,6 +52,9 @@ export default {
         xaxis: {
           categories: data.data.map(x => x.date),
         },
+        yaxis: {
+          max: 300,
+        }
       },
       series: [
         {
