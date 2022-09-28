@@ -16,8 +16,8 @@ const progress = Math.round((records.total / 300) * 10000) / 100
 const expectedProgress = ref(0)
 const expectedPoints = ref(0)
 function calcExpectedPoints() {
-  const start = new Date('2022-09-12 00:08:00')
-  const now = new Date()
+  const start = new Date('2022/09/12 00:08:00').getTime()
+  const now = new Date().getTime()
   expectedPoints.value = Math.min((((now - start) / 1000) * (300 / 21 / 86400)).toFixed(4), 300)
   expectedProgress.value = Math.round((expectedPoints.value / 300) * 10000) / 100
 }
